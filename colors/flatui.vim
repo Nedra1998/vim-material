@@ -102,8 +102,8 @@ let s:vim_fg = ['fg',   'fg'  ]
 let s:none   = ['NONE', 'NONE']
 
 if &background=="light"
-  let s:bg0     = s:ui.white0
-  let s:bg1     = s:ui.white1
+  let s:bg0     = s:ui.white1
+  let s:bg1     = s:ui.white0
   let s:bg2     = s:ui.grey1
   let s:fg0     = s:ui.grey0
   let s:fg1     = s:ui.black0
@@ -279,8 +279,8 @@ call s:HL('Underlined', s:magenta1, s:none, s:underline)
 call s:HL('Bold', s:none, s:none, s:bold)
 call s:HL('Italic', s:none, s:none, s:italic)
 
-call s:HL('StatusLine', s:fg1, s:bg2, s:bold)
-call s:HL('StatusLineNC', s:fg0, s:bg2, s:bold)
+call s:HL('StatusLine', s:red0, s:none)
+call s:HL('StatusLineNC', s:none, s:none)
 
 call s:HL('VertSplit', s:bg2, s:bg2)
 
@@ -456,6 +456,8 @@ call s:HL('htmlTag', s:fg1)
 call s:HL('htmlTagName', s:blue0, s:none, s:bold)
 call s:HL('htmlArg', s:fg1)
 call s:HL('htmlEndTag', s:fg1)
+call s:HL('htmlBold', s:none, s:none, s:bold)
+call s:HL('htmlItalic', s:none, s:none, s:italic)
 
 " }}}
 " Mail: {{{
@@ -492,7 +494,7 @@ call s:HL('mkdCode', s:green0)
 call s:HL('mkdCodeStart', s:red0)
 call s:HL('mkdCodeEnd', s:red0)
 call s:HL('mkdLink', s:blue0, s:none, s:underline)
-call s:HL('mkdUrl', s:fg0)
+call s:HL('mkdUrl', s:magenta1)
 call s:HL('mkdDelimiter', s:yellow0)
 call s:HL('mkdDelimiter', s:yellow0)
 call s:HL('mkdRule', s:magenta0)
@@ -536,10 +538,13 @@ call s:HL('shWrapLineOperator', s:red1)
 " }}}
 " Tex: {{{
 
-call s:HL('texStatement', s:cyan0)
-call s:HL('texMathZoneX', s:yellow0)
-call s:HL('texMathMatcher', s:yellow0)
+call s:HL('texStatement', s:green0)
+call s:HL('texMathZoneX', s:blue0)
+call s:HL('texMathZoneX', s:blue0)
+call s:HL('texMathMatcher', s:blue0)
 call s:HL('texRefLabel', s:green0)
+call s:HL('texBoldStyle', s:none, s:none, s:bold)
+call s:HL('texItalStyle', s:none, s:none, s:italic)
 
 " }}}
 " Vim: {{{
