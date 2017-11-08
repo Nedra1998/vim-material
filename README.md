@@ -1,6 +1,6 @@
-# Vim-FlatUI
+# Vim-Material
 
-This is a color scheme based on the [FlatUI](https://flatuicolors.com/) color
+This is a color scheme based on the [Material](https://flatuicolors.com/) color
 scheme. The color scheme should work out of the box, for `vim`, `gvim`, or
 `nvim`. Simply install the color scheme and set it in your `.vimrc` or
 `init.vim`.
@@ -17,18 +17,18 @@ git clone https://github.com/Nedra1998/vim-flatui
 ### Vundle
 
 ```vim
-Plugin 'Nedra1998/vim-flatui'
+Plugin 'Nedra1998/vim-material'
 ```
 
 ### Vim-Plug
 
 ```vim
-Plug 'Nedra1998/vim-flatui'
+Plug 'Nedra1998/vim-material'
 ```
 
 ## Usage
 
-Simply set the colors scheme to `flatui` and pick the variant.
+Simply set the colors scheme to `material` and pick the variant.
 
 ```vim
 let background=dark " Or light for the light variant
@@ -39,8 +39,8 @@ colorscheme flatui
 
 ### Airline
 
-Set the airline color scheme to `flatui` to pick the matched color scheme.
+Set the airline color scheme to `material` to pick the matched color scheme.
 
 ```vim
-let g:airline_theme = 'flatui'
+let g:airline_theme = 'material'
 ```
