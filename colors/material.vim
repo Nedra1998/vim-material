@@ -35,31 +35,31 @@ endfunction
 
 function! s:set_color(opt, val)
   if a:val == "red"
-    let s:{a:opt} = s:ui.red
+    let g:{a:opt} = s:ui.red
   elseif a:val == "pink"
-    let s:{a:opt} = s:ui.pink
+    let g:{a:opt} = s:ui.pink
   elseif a:val == "orange"
-    let s:{a:opt} = s:ui.orange
+    let g:{a:opt} = s:ui.orange
   elseif a:val == "yellow"
-    let s:{a:opt} = s:ui.yellow
+    let g:{a:opt} = s:ui.yellow
   elseif a:val == "green"
-    let s:{a:opt} = s:ui.green
+    let g:{a:opt} = s:ui.green
   elseif a:val == "pale_blue"
-    let s:{a:opt} = s:ui.pale_blue
+    let g:{a:opt} = s:ui.pale_blue
   elseif a:val == "cyan"
-    let s:{a:opt} = s:ui.cyan
+    let g:{a:opt} = s:ui.cyan
   elseif a:val == "blue"
-    let s:{a:opt} = s:ui.blue
+    let g:{a:opt} = s:ui.blue
   elseif a:val == "purple"
-    let s:{a:opt} = s:ui.purple
+    let g:{a:opt} = s:ui.purple
   elseif a:val == "violet"
-    let s:{a:opt} = s:ui.violet
+    let g:{a:opt} = s:ui.violet
   elseif a:val == "brown"
-    let s:{a:opt} = s:ui.brown
+    let g:{a:opt} = s:ui.brown
   elseif a:val == "grey"
-    let s:{a:opt} = s:ui.dark_gray
+    let g:{a:opt} = s:ui.dark_gray
   elseif a:val == "white"
-    let s:{a:opt} = s:ui.white
+    let g:{a:opt} = s:ui.white
   endif
 endfunction
 
@@ -321,13 +321,13 @@ if version >= 700
   call s:HL('TabLine', s:ui.lighter_gray, s:ui.darker_gray)
   call s:HL('TabLineFill', s:ui.lighter_gray, s:ui.darker_gray)
   call s:HL('TabLineSel', s:ui.green, s:ui.darker_gray)
-  call s:HL('MatchParen', s:primary, s:background_2, s:bold . s:underline)
+  call s:HL('MatchParen', g:primary, s:background_2, s:bold . s:underline)
 endif
 
 if version >= 703
   call s:HL('ColorColumn', s:none, s:background_2)
   call s:HL('Conceal', s:ui.blue, s:background)
-  call s:HL('CursorLineNr', s:primary, s:background_2, s:bold)
+  call s:HL('CursorLineNr', g:primary, s:background_2, s:bold)
 endif
 
 call s:HL('NonText', s:none, s:none, s:bold)
@@ -343,7 +343,7 @@ call s:HL('Underlined', s:ui.blue, s:none, s:underline)
 call s:HL('Bold', s:none, s:none, s:bold)
 call s:HL('Italic', s:none, s:none, s:italic)
 
-call s:HL('StatusLine', s:primary, s:none)
+call s:HL('StatusLine', g:primary, s:none)
 call s:HL('StatusLineNC', s:secondary, s:none)
 
 call s:HL('VertSplit', s:background_2, s:background_2)
@@ -372,21 +372,21 @@ call s:HL('EndOfBuffer', s:background, s:background)
 
 call s:HL('SignColumn', s:foreground_2, s:background_2)
 
-call s:HL('Folded', s:primary, s:ui.dark_gray, s:italic)
-call s:HL('FoldColumn', s:primary, s:ui.dark_gray, s:italic)
+call s:HL('Folded', g:primary, s:ui.dark_gray, s:italic)
+call s:HL('FoldColumn', g:primary, s:ui.dark_gray, s:italic)
 
 " }}}
 " Cursor: {{{
 
-call s:HL('Cursor', s:primary, s:none, s:inverse)
-call s:HL('vCursor', s:primary, s:none, s:inverse)
-call s:HL('iCursor', s:primary, s:none, s:inverse)
-call s:HL('lCursor', s:primary, s:none, s:inverse)
+call s:HL('Cursor', g:primary, s:none, s:inverse)
+call s:HL('vCursor', g:primary, s:none, s:inverse)
+call s:HL('iCursor', g:primary, s:none, s:inverse)
+call s:HL('lCursor', g:primary, s:none, s:inverse)
 
 " }}}
 " Syntax Highlighting: {{{
 
-call s:HL('Special', s:primary)
+call s:HL('Special', g:primary)
 
 call s:HL('Comment', s:ui.light_gray, s:none, s:italic)
 call s:HL('Todo', s:ui.orange, s:background_2)
@@ -432,7 +432,7 @@ call s:HL('Typedef', s:ui.yellow)
 
 if version >= 700
   call s:HL('Pmenu', s:foreground_2, s:background_2)
-  call s:HL('PmenuSel', s:background_2, s:primary, s:bold)
+  call s:HL('PmenuSel', s:background_2, g:primary, s:bold)
   call s:HL('PmenuSbar', s:none, s:background)
   call s:HL('PmenuThumb', s:none, s:foreground_2)
 endif
